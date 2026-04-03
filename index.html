@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Para el amor de mi vida</title>
+
+<title>Mi sol y estrellas</title>
 
 <style>
 
 body{
-background:#ffe6f0;
-font-family:Arial;
+margin:0;
+font-family: Arial, sans-serif;
+color:white;
 text-align:center;
+
+background-image:url("background.gif");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.container{
+background:rgba(0,0,0,0.6);
 padding:40px;
+max-width:800px;
+margin:auto;
 }
 
 h1{
-color:#ff4d88;
+font-size:50px;
+margin-bottom:10px;
+}
+
+.counter{
+font-size:22px;
+margin-bottom:40px;
 }
 
 img{
-width:300px;
-border-radius:20px;
-margin-top:20px;
+width:100%;
+max-width:500px;
+border-radius:15px;
+margin:30px 0;
 }
 
 p{
-font-size:20px;
+font-size:22px;
+line-height:1.6;
+margin:40px 0;
 }
 
 </style>
@@ -32,19 +55,73 @@ font-size:20px;
 
 <body>
 
-<h1>Para ti ❤️</h1>
+<div class="container">
 
-<p>
-Desde que llegaste a mi vida todo cambió.
-Cada momento contigo es especial.
-</p>
+<h1>Mi sol y estrellas ⭐✨</h1>
+
+<div class="counter" id="contador"></div>
 
 <img src="foto1.jpg">
 
 <p>
-Gracias por hacer mi vida más feliz.
-Te amo.
+Aquí irá el primer párrafo de la carta.
 </p>
 
+<img src="foto2.jpg">
+
+<p>
+Aquí irá el segundo párrafo de la carta.
+</p>
+
+<img src="foto3.jpg">
+
+<p>
+Aquí irá el tercer párrafo de la carta.
+</p>
+
+<img src="foto4.jpg">
+
+<p>
+Aquí irá el cuarto párrafo de la carta.
+</p>
+
+<img src="foto5.jpg">
+
+<p>
+Aquí irá el quinto párrafo de la carta.
+</p>
+
+<img src="final.gif">
+
+</div>
+
+<script>
+
+const fechaInicio = new Date("2025-01-18T21:00:00");
+
+function actualizarContador(){
+
+const ahora = new Date();
+const diferencia = ahora - fechaInicio;
+
+const dias = Math.floor(diferencia / (1000*60*60*24));
+const horas = Math.floor((diferencia / (1000*60*60)) % 24);
+const minutos = Math.floor((diferencia / (1000*60)) % 60);
+const segundos = Math.floor((diferencia / 1000) % 60);
+
+document.getElementById("contador").innerHTML =
+"Llevamos juntos: " +
+dias + " días, " +
+horas + " horas, " +
+minutos + " minutos y " +
+segundos + " segundos ❤️";
+
+}
+
+setInterval(actualizarContador,1000);
+
+</script>
+
 </body>
+
 </html>
